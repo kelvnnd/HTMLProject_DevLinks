@@ -74,15 +74,15 @@ body * {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+    animation: modebutton-light 0.2s;
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+    animation: modebutton-dark 0.2s forwards;
 }
 
 #switch button:hover {
-    
+    outline: 8px solid var(--highlight-color)
 }
 
 #switch span {
@@ -156,4 +156,22 @@ footer {
     .light {
         --bg-url: url(./assets/bg-desktop-light.jpg);
     }
+}
+
+@keyframes modebutton-dark {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes modebutton-light {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    } 
 }
